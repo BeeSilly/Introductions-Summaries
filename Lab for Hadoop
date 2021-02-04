@@ -1,2 +1,15 @@
 This document is used for the lab of A2 Hadoop Reduce: Error recording and code/command backup.
 
+1. connect to the VM
+
+2. Hadoop: Setting up a Single Node Cluster.
+https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html
+
+Install ssh, pdsh
+ $ sudo apt-get install ssh
+ $ sudo apt-get install pdsh
+ 
+ Insall Java
+ https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04
+ Usually it is install, and java -version will return the version information
+ 
