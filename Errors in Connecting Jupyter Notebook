@@ -27,3 +27,20 @@ then run this
 $sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mycert.pem -out mycert.pem
 
 
+
+## 2 Error occured when using ssh connects to the cloud VM
+
+f@f-virtual-machine:~/Desktop$ ssh -i home/f/delabsshkey.pem ubuntu@130.238.29.121
+Warning: Identity file home/f/delabsshkey.pem not accessible: No such file or directory.
+The authenticity of host '130.238.29.121 (130.238.29.121)' can't be established.
+ECDSA key fingerprint is SHA256:ZqUMz5JdM9C4yzuvpZZU2GAGp1RQWhdo5m0eH7ytC5w.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '130.238.29.121' (ECDSA) to the list of known hosts.
+ubuntu@130.238.29.121: Permission denied (publickey).
+
+Solution: Ref Link: https://askubuntu.com/questions/311558/ssh-permission-denied-publickey
+chmod 700 .ssh
+chmod 600 .ssh/authorized_keys
+Also for No such file or directory ==> notice for inputting the path: /home/f/delabsshkey.pem 
+
+
