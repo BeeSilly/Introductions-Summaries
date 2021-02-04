@@ -28,9 +28,11 @@ Save the file and load the new $PATH into the current shell session using the so
 source ~/.bashrc
 To confirm that the directory was successfully added, print the value of your $PATH by typing:
 echo $PATH
- * /etc/environment #PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/hadoop/bin"
+ * /etc/environment ==> PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/hadoop/bin"
  
- 
+Modify the hostname
+hostnamectl ==> check the current local host name.
+vim etc/hosts ==> 127.0.0.1 localhost <your hostname>
  
  
  
