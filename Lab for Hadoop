@@ -35,6 +35,20 @@ hostnamectl ==> check the current local host name.
 vim etc/hosts ==> 127.0.0.1 localhost <your hostname>
  
  
- 
- 
+The first time to run "bin/hdfs namenode -format" with the shutdown message is normal, something as bellow:
+...
+21/02/06 09:25:29 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid >= 0
+21/02/06 09:25:29 INFO namenode.FSImage: FSImageSaver clean checkpoint: txid = 0 when meet shutdown.
+21/02/06 09:25:29 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at localhost/127.0.0.1
+************************************************************/
+..
+if then run this command again, then the jps command will return information without datanode or namenode.
+If this happened, solution is that: stop the clusters, remove the files under data (for me I also delete the contents of name, namesecondary), format, start cluster, then jps.
+bin/stop-all.sh
+cd /tmp/hadoop-ubuntu/dfs
+rm -rf *
+bin/hdfs namenode -format
+sbin/start-dfs.sh
  
